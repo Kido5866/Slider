@@ -5,6 +5,16 @@ let counter = 0
 prevBtn.addEventListener('click', prevSlide)
 nextBtn.addEventListener('click', nextSlide)
 function nextSlide(){
+    if(counter === 4){
+        counter = -1;
+    }
     counter++
-    container.style.backgroundImage = `url(/Users/kyzen/Library/Mobile Documents/com~apple~CloudDocs/Basic Java Projects/Slider/Bcg-$){counter}.jpeg`
+    container.style.backgroundImage = `url(./BCG-{counter}.jpeg)`
+}
+function prevSlide(){
+    if(counter === 0){
+        counter = 5;
+    }
+    counter++
+    container.style.backgroundImage = `url(./BCG-{counter}.jpeg)`
 }
